@@ -1,0 +1,33 @@
+
+.not-found {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #808080;
+}
+
+.not-found h2 {
+    font-size: 4rem;
+}
+
+.not-found p {
+    font-size: 1.3rem;
+}
+
+.not-found a {
+    background: #4040e9;
+    color: #fff;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.not-found a:hover {
+    opacity: .8
+}
