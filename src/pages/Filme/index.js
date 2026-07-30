@@ -2,6 +2,7 @@
  import { useParams, useNavigate} from "react-router-dom";
  import api from '../../services/api';
  import './filme-info.css';
+ import { toast } from 'react-toastify';
 
 function Filme() {
     const { id } = useParams();
@@ -43,13 +44,13 @@ function Filme() {
      //verificar se já tem o filme na lista que o usuário está querendo salvar.    
         const hasFilme = filmesSalvos.some((filmeSalvo) => filmeSalvo.id === filme.id );
         if(hasFilme){
-            alert("ESSE FILME JÁ ESTÁ NA LISTA.")
+            toast.warn("Esse filme já está na sua lista.");
             return;
         }
      // adicionando filme na lista.
         filmesSalvos.push(filme)
         localStorage.setItem("@primeFlix", JSON.stringify(filmesSalvos));
-        alert("FILME SALVO COM SUCESSO!") 
+        toast.success("Filme salvo com sucesso!");
     }
 
     if(loading){
